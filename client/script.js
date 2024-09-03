@@ -28,7 +28,7 @@ function typeText(element, text) {
   let interval = setInterval(() => {
 
     if(index < text.length) {
-      element.innerHTML += text.charAt(index);
+      element.innerHTML += text.chartAt(index);
       index++
     } 
 
@@ -36,4 +36,14 @@ function typeText(element, text) {
       clearInterval(interval);
     }
   }, 20)
+}
+
+
+
+function generateUniqueId() {
+  const timestamp = Date.now();
+  const randomNumber = Math.random();
+  const hexadecimalString = randomNumber.toString(16);
+
+  return `id-${timestamp}-${hexadecimalString}`;
 }
